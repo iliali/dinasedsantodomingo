@@ -416,7 +416,6 @@
   <!-- 1. PANTALLA DE ACCESO CON CONTRASEÑA -->
   <div id="pantalla-login" class="pantalla-fondo">
     <div class="card-login">
-      <!-- Imagen subida a GitHub -->
       <img src="DINASED_ESCUDO.png" alt="Escudo DINASED" class="logo-login">
       <h2>DINASED SANTO DOMINGO</h2>
       <h3>Acceso Restringido al Sistema</h3>
@@ -524,21 +523,17 @@
   </div>
 
   <script>
-    // 🔑 CONTRASEÑA DEFINIDA PARA ACCESO
     const CLAVE_CORRECTA = "DINASED2026";
-    
-    // ⏱️ TIEMPO MÁXIMO DE INACTIVIDAD (5 Minutos = 300,000 ms)
     const TIEMPO_INACTIVIDAD = 5 * 60 * 1000; 
     var timerInactividad;
 
-    // ENLACES DIRECTOS DE LOOKER STUDIO
     const URLS_PAGINAS = {
-      "pag1": "https://datastudio.google.com/embed/reporting/df354905-3fa9-43aa-b1b4-fd9ef699a539/page/p_neu0g6425d",
-      "pag2": "https://datastudio.google.com/embed/reporting/df354905-3fa9-43aa-b1b4-fd9ef699a539/page/p_6yqasyk35d",
-      "pag3": "https://datastudio.google.com/embed/reporting/df354905-3fa9-43aa-b1b4-fd9ef699a539/page/p_pk0hd3k35d",
-      "pag4": "https://datastudio.google.com/embed/reporting/df354905-3fa9-43aa-b1b4-fd9ef699a539/page/p_r5fyrkzj7d",
-      "pag5": "https://datastudio.google.com/embed/reporting/df354905-3fa9-43aa-b1b4-fd9ef699a539/page/p_zqgaxyri7d",
-      "pag6": "https://datastudio.google.com/embed/reporting/df354905-3fa9-43aa-b1b4-fd9ef699a539/page/p_orvxrbxu7d"
+      "pag1": "https://lookerstudio.google.com/embed/reporting/df354905-3fa9-43aa-b1b4-fd9ef699a539/page/p_neu0g6425d",
+      "pag2": "https://lookerstudio.google.com/embed/reporting/df354905-3fa9-43aa-b1b4-fd9ef699a539/page/p_6yqasyk35d",
+      "pag3": "https://lookerstudio.google.com/embed/reporting/df354905-3fa9-43aa-b1b4-fd9ef699a539/page/p_pk0hd3k35d",
+      "pag4": "https://lookerstudio.google.com/embed/reporting/df354905-3fa9-43aa-b1b4-fd9ef699a539/page/p_r5fyrkzj7d",
+      "pag5": "https://lookerstudio.google.com/embed/reporting/df354905-3fa9-43aa-b1b4-fd9ef699a539/page/p_zqgaxyri7d",
+      "pag6": "https://lookerstudio.google.com/embed/reporting/df354905-3fa9-43aa-b1b4-fd9ef699a539/page/p_orvxrbxu7d"
     };
 
     window.addEventListener('DOMContentLoaded', function() {
