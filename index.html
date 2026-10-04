@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>DINASED - SISTEMA ESTADÍSTICO DE HOMICIDIOS INTENCIONALES</title>
   
   <!-- Ícono para la pestaña del navegador -->
@@ -22,10 +22,12 @@
       height: 100%;
       font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       background-color: #08111e;
-      overflow: hidden;
+      overflow-x: hidden;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
     }
 
-    /* Fondo Tecnológico de Red/Polígonos (Idéntico a Apps Script) */
+    /* Fondo Tecnológico de Red/Polígonos */
     .pantalla-fondo {
       display: flex;
       flex-direction: column;
@@ -416,6 +418,62 @@
       margin-bottom: 10px;
       display: block;
     }
+
+    /* 📱 REGLAS EXCLUSIVAS PARA ADAPTACIÓN A PANTALLAS MÓVILES (NO AFECTA A PC) */
+    @media (max-width: 768px) {
+      .pantalla-fondo {
+        padding: 60px 15px 30px 15px;
+        justify-content: flex-start;
+      }
+      .btn-logout {
+        position: fixed;
+        top: 12px;
+        right: 12px;
+        padding: 6px 12px;
+        font-size: 0.75rem;
+      }
+      .titulo-superior {
+        font-size: 1rem;
+        letter-spacing: 1px;
+      }
+      .logos-container {
+        gap: 10px;
+        margin-bottom: 12px;
+      }
+      .logo-header {
+        height: 55px;
+      }
+      .logo-centro {
+        height: 70px;
+      }
+      #menu-inicio h1 {
+        font-size: 1.15rem;
+      }
+      #menu-inicio p {
+        font-size: 0.85rem;
+      }
+      .grid-botones {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .card-modulo {
+        padding: 16px 12px;
+      }
+      header {
+        padding: 0 10px;
+      }
+      #titulo-pagina-actual {
+        font-size: 0.75rem;
+        max-width: 130px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .btn-volver {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -451,7 +509,7 @@
     <div class="header-menu">
       <h2 class="titulo-superior">DINASED SANTO DOMINGO DE LOS TSÁCHILAS</h2>
 
-      <!-- Tres Logos Oficiales Diferentes: DIGIN, Policía Nacional y DINASED -->
+      <!-- Los 3 logos institucionales alineados: DIGIN, Policía Nacional y DINASED -->
       <div class="logos-container">
         <img src="https://lh3.googleusercontent.com/d/1nxv_xXwbHEQgWAn1lqhjI5O4Y0_4SoxO" alt="DIGIN" class="logo-header">
         <img src="https://lh3.googleusercontent.com/d/1SACC-s80T33g-X2EaQ4r51JTE-Kt1RY-" alt="Policía Nacional" class="logo-header logo-centro">
@@ -534,10 +592,14 @@
   </div>
 
   <script>
+    // 🔑 CONTRASEÑA DEFINIDA PARA ACCESO
     const CLAVE_CORRECTA = "DINASED2026";
+    
+    // ⏱️ TIEMPO MÁXIMO DE INACTIVIDAD (5 Minutos = 300,000 ms)
     const TIEMPO_INACTIVIDAD = 5 * 60 * 1000; 
     var timerInactividad;
 
+    // ENLACES DIRECTOS DE LOOKER STUDIO
     const URLS_PAGINAS = {
       "pag1": "https://lookerstudio.google.com/embed/reporting/df354905-3fa9-43aa-b1b4-fd9ef699a539/page/p_neu0g6425d",
       "pag2": "https://lookerstudio.google.com/embed/reporting/df354905-3fa9-43aa-b1b4-fd9ef699a539/page/p_6yqasyk35d",
